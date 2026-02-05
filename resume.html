@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Resume — Ayanava Dutta" />
+    <title>Resume | Ayanava Dutta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      :root { --bg:#0b1020; --text:rgba(255,255,255,.92); --muted:rgba(255,255,255,.68); --panel:rgba(255,255,255,.06); }
+      *{box-sizing:border-box}
+      body{
+        margin:0;
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(1200px 600px at 10% -10%, rgba(124,92,255,.22), transparent 60%),
+          radial-gradient(900px 500px at 90% 10%, rgba(52,211,153,.14), transparent 55%),
+          var(--bg);
+        line-height: 1.55;
+      }
+      a{color:inherit}
+      .wrap{max-width: 980px; margin: 0 auto; padding: 28px 20px 64px}
+      .top{display:flex; align-items:center; justify-content:space-between; gap: 12px; flex-wrap:wrap}
+      .btn{
+        display:inline-flex; align-items:center; justify-content:center;
+        height: 42px; padding: 0 14px; border-radius: 14px;
+        border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.06);
+        text-decoration:none; font-weight: 700; font-size: 14px;
+      }
+      .btn:hover{background: rgba(255,255,255,.08)}
+      .card{margin-top: 16px; border-radius: 18px; border: 1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.04); padding: 18px}
+      h1{margin: 10px 0 0; letter-spacing:-0.04em}
+      .meta{margin: 8px 0 0; color: var(--muted); font-size: 14px}
+      h2{margin: 22px 0 8px; font-size: 16px; letter-spacing:-0.02em}
+      ul{margin: 8px 0 0; padding-left: 18px; color: rgba(255,255,255,.80)}
+      li{margin: 8px 0}
+      .grid{display:grid; grid-template-columns: 1fr 1fr; gap: 12px}
+      @media (max-width: 720px){ .grid{grid-template-columns: 1fr} }
+      .pill{display:inline-block; padding: 6px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.05); margin: 6px 8px 0 0; font-size: 12px; color: rgba(255,255,255,.78)}
+      .note{margin-top: 14px; color: var(--muted); font-size: 13px}
+      code{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="top">
+        <a class="btn" href="index.html">← Back to portfolio</a>
+        <a class="btn" href="assets/Ayanava_Dutta_Resume.pdf" target="_blank" rel="noreferrer">Open PDF (if available)</a>
+      </div>
+
+      <div class="card">
+        <h1>Ayanava Dutta</h1>
+        <p class="meta">
+          <a href="mailto:ayanava1999@gmail.com">ayanava1999@gmail.com</a> ·
+          <a href="https://github.com/ayanava99" target="_blank" rel="noreferrer">GitHub</a> ·
+          <a href="https://www.linkedin.com/in/ayanava-99" target="_blank" rel="noreferrer">LinkedIn</a>
+        </p>
+
+        <h2>Education</h2>
+        <div class="grid">
+          <div>
+            <strong>Indian Institute of Technology Patna</strong><br />
+            M.Tech in Artificial Intelligence (CGPA: 8.09) · 2025–2027
+          </div>
+          <div>
+            <strong>Kalinga Institute of Industrial Technology</strong><br />
+            B.Tech in Computer Science and Systems Engineering (CGPA: 7.76) · 2017–2021
+          </div>
+        </div>
+
+        <h2>Experience</h2>
+        <strong>PricewaterhouseCoopers (PwC)</strong> — Associate 2 (Data & Analytics) · Sep 2021 – Jun 2023
+        <ul>
+          <li>Led technical implementation for a 12-person squad to automate data cleaning workflows; reduced processing time and optimized ETL cost via Azure improvements.</li>
+          <li>Built a reusable Pandas transformation package to standardize data ingestion/cleanup across diverse formats, improving code reuse and consistency.</li>
+          <li>Operated high-volume ETL pipelines for SAP ECC → S/4HANA migration with zero downtime and strong recoverability.</li>
+          <li>Implemented PL/SQL integrity validations and reconciliation checks across complex tables and legacy systems.</li>
+          <li>Introduced CI/CD and refactoring practices to modernize a legacy codebase and reduce regressions.</li>
+        </ul>
+
+        <div style="height: 12px"></div>
+        <strong>Highradius</strong> — Data Science Intern · Apr 2020 – Jul 2021
+        <ul>
+          <li>Developed and deployed remittance prediction models into production; automated manual tasks and improved operations throughput.</li>
+          <li>Performed monthly analytics for drift and bottlenecks; contributed to sustained model performance improvements.</li>
+          <li>Built monitoring and retraining pipelines for long-term model quality.</li>
+          <li>Led a 4-member team to deliver a Dockerized web application, reducing deployment time and environment inconsistencies.</li>
+          <li>Shipped an intelligent image gallery feature that removed the majority of manual review effort across teams.</li>
+          <li>Built a full-stack B2B cloud app integrating a Dialogflow chatbot for high daily query volumes.</li>
+        </ul>
+
+        <h2>Projects</h2>
+        <ul>
+          <li><strong>ML Model Analyser</strong> — Streamlit app diagnosing ML model failures with heuristics + LLM reasoning; includes drift detection, health scoring, and suggested fixes.</li>
+          <li><strong>Exam Seating & Attendance Generator</strong> — Streamlit + ReportLab system with clash detection (constraint satisfaction), optimized room allocation, and dynamic attendance sheet generation; Dockerized deployment.</li>
+        </ul>
+
+        <h2>Skills</h2>
+        <div>
+          <span class="pill">Python</span><span class="pill">C++</span><span class="pill">C</span>
+          <span class="pill">Pandas</span><span class="pill">Scikit-learn</span><span class="pill">FastAPI</span><span class="pill">Streamlit</span>
+          <span class="pill">Azure (Databricks)</span><span class="pill">Docker</span><span class="pill">Git</span>
+          <span class="pill">Oracle PL/SQL</span>
+        </div>
+
+        <h2>Certifications</h2>
+        <ul>
+          <li>Microsoft Certified: Azure AI Engineer Associate (AI-102)</li>
+          <li>Microsoft Certified: Azure Data Scientist (DP-100)</li>
+          <li>AWS Certified Cloud Practitioner</li>
+        </ul>
+
+        <p class="note">
+          To restore PDF viewing: replace <code>assets/Ayanava_Dutta_Resume.pdf</code> with your real PDF and push to GitHub.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
+

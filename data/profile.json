@@ -6,6 +6,7 @@
   "githubUsername": "ayanava99",
   "githubUrl": "https://github.com/ayanava99",
   "linkedinUrl": "https://www.linkedin.com/in/ayanava-99",
+  "youtubeUrl": "",
   "experience": [
     {
       "company": "PricewaterhouseCoopers (PwC)",
@@ -13,11 +14,11 @@
       "location": "Bangalore, KA",
       "dates": "Sep 2021 – Jun 2023",
       "bullets": [
-        "Led technical implementation for a 12-person squad to automate data cleaning workflows; reduced processing time and optimized ETL costs via Azure improvements.",
-        "Built a Pandas-based Python package to standardize transformations across diverse formats, improving code reuse and consistency.",
-        "Worked on high-volume ETL pipelines for SAP ECC → S/4HANA migration, processing large daily volumes with zero downtime.",
-        "Engineered PL/SQL procedures to validate data integrity across complex tables and legacy systems, improving accuracy and trust.",
-        "Improved maintainability of a legacy codebase via CI/CD practices and refactoring, boosting developer productivity."
+        "Owned technical delivery for a 12-person squad to automate data cleaning workflows, cutting pipeline processing time and lowering Azure ETL run-costs through targeted optimizations.",
+        "Designed and shipped a reusable Pandas transformation package to standardize ingestion/cleanup across heterogeneous file formats; improved code reuse and reduced repeated implementation effort across teams.",
+        "Built and operated high-volume ETL pipelines for SAP ECC → S/4HANA migration (batch + validation), sustaining daily processing at scale with zero downtime and predictable recoverability.",
+        "Implemented robust PL/SQL validation procedures and reconciliation checks across complex relational tables and legacy systems, raising data integrity and auditability for downstream consumers.",
+        "Modernized a legacy analytics codebase by introducing CI/CD patterns and refactoring high-risk modules to improve maintainability, reduce regressions, and speed up releases."
       ]
     },
     {
@@ -26,12 +27,12 @@
       "location": "Bhubaneswar, OD",
       "dates": "Apr 2020 – Jul 2021",
       "bullets": [
-        "Developed and deployed Remittance Prediction models into production, improving accuracy and automating manual work.",
-        "Ran monthly performance analysis for remittance prediction and mismatch models to identify bottlenecks and drift.",
-        "Built monitoring and retraining pipelines to sustain model performance over time.",
-        "Led a 4-member team to architect a Dockerized web application, reducing deployment time and operational friction.",
-        "Shipped an intelligent Image Gallery feature that removed most manual review effort across multiple cross-functional teams.",
-        "Built a full-stack B2B cloud application with a Dialogflow chatbot handling high volumes of daily queries."
+        "Developed and deployed remittance prediction models to production; automated manual investigation workflows and improved decision latency for operations teams.",
+        "Performed recurring model analytics (accuracy, drift signals, and error breakdowns) for remittance prediction and mismatch detection to identify bottlenecks and prioritize fixes.",
+        "Built monitoring + retraining pipelines to sustain model quality over time and reduce performance regressions in production.",
+        "Led a 4-member effort to architect and deliver a Dockerized web application, improving environment consistency and reducing deploy time.",
+        "Shipped an intelligent image gallery feature that eliminated the majority of manual review effort across multiple teams by surfacing the right artifacts at the right time.",
+        "Built a full-stack B2B cloud application integrating a Dialogflow chatbot to handle high daily query volume with reliable routing and fallback behavior."
       ]
     }
   ],

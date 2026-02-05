@@ -12,6 +12,29 @@ function escapeHtml(str) {
     .replaceAll("'", "&#039;");
 }
 
+function normalizeUrl(url) {
+  const raw = String(url || "").trim();
+  if (!raw) return "";
+  if (raw.startsWith("#")) return raw;
+  if (raw.startsWith("mailto:") || raw.startsWith("tel:")) return raw;
+  if (raw.startsWith("http://") || raw.startsWith("https://")) return raw;
+  // Common case: user pastes "youtube.com/..." or "github.com/..."
+  return `https://${raw.replace(/^\/+/, "")}`;
+}
+
+function setLink(sel, href, { showText } = {}) {
+  const el = $(sel);
+  if (!el) return;
+  const normalized = normalizeUrl(href);
+  if (!normalized) {
+    el.hidden = true;
+    return;
+  }
+  el.hidden = false;
+  el.setAttribute("href", normalized);
+  if (showText) el.textContent = showText;
+}
+
 async function readJson(path) {
   const res = await fetch(path, { cache: "no-store" });
   if (!res.ok) throw new Error(`Failed to load ${path}`);
@@ -83,9 +106,11 @@ function renderCerts(certs) {
 
 function projectCard(p) {
   const tags = (p.tags || []).map((t) => `<span class="pill">${escapeHtml(t)}</span>`).join("");
+  const liveUrl = normalizeUrl(p.liveUrl);
+  const repoUrl = normalizeUrl(p.repoUrl);
   const links = [
-    p.liveUrl ? `<a href="${escapeHtml(p.liveUrl)}" target="_blank" rel="noreferrer">Live</a>` : "",
-    p.repoUrl ? `<a href="${escapeHtml(p.repoUrl)}" target="_blank" rel="noreferrer">Code</a>` : "",
+    liveUrl ? `<a href="${escapeHtml(liveUrl)}" target="_blank" rel="noreferrer">Live</a>` : "",
+    repoUrl ? `<a href="${escapeHtml(repoUrl)}" target="_blank" rel="noreferrer">Code</a>` : "",
   ]
     .filter(Boolean)
     .join("");
@@ -163,6 +188,23 @@ async function init() {
   $("#year").textContent = String(new Date().getFullYear());
 
   const profile = await readJson("data/profile.json");
+
+  // Top links (normalize so "youtube.com/..." works)
+  setLink("#link-github", profile.githubUrl || "https://github.com/ayanava99", { showText: "GitHub" });
+  setLink("#link-linkedin", profile.linkedinUrl || "https://www.linkedin.com/in/ayanava-99", { showText: "LinkedIn" });
+  setLink("#link-email", `mailto:${profile.email || "ayanava1999@gmail.com"}`, { showText: profile.email || "Email" });
+
+  // Optional YouTube
+  const yt = normalizeUrl(profile.youtubeUrl || "");
+  const dotYt = $("#dot-youtube");
+  if (yt) {
+    if (dotYt) dotYt.hidden = false;
+    setLink("#link-youtube", yt, { showText: "YouTube" });
+  } else {
+    if (dotYt) dotYt.hidden = true;
+    const ytEl = $("#link-youtube");
+    if (ytEl) ytEl.hidden = true;
+  }
 
   // Experience / Education / Skills
   renderExperience(profile.experience || []);
