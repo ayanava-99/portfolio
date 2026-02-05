@@ -1,0 +1,16 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Logs
+*.log
+
+# If you later add Node tooling
+node_modules/
+.next/
+dist/
+
+# Secrets (never commit)
+.env
+.env.*

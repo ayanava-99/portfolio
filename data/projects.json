@@ -1,0 +1,18 @@
+{
+  "projects": [
+    {
+      "name": "ML Model Analyser",
+      "description": "Streamlit app to diagnose ML model failures using rule-based heuristics + LLM reasoning; includes drift detection, health scoring, and suggested fixes.",
+      "tags": ["Python", "Streamlit", "LLM", "ML Observability"],
+      "liveUrl": "",
+      "repoUrl": ""
+    },
+    {
+      "name": "Exam Seating & Attendance Generator",
+      "description": "Automated exam management system with clash detection (constraint satisfaction), optimized room allocation, and dynamic attendance sheet generation; Dockerized deployment.",
+      "tags": ["Python", "Streamlit", "Docker", "Optimization"],
+      "liveUrl": "",
+      "repoUrl": ""
+    }
+  ]
+}

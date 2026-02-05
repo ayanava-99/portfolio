@@ -1,0 +1,69 @@
+{
+  "name": "Ayanava Dutta",
+  "title": "AI • Data Engineering • ML Systems",
+  "email": "ayanava1999@gmail.com",
+  "phone": "+91-9556386605",
+  "githubUsername": "ayanava99",
+  "githubUrl": "https://github.com/ayanava99",
+  "linkedinUrl": "https://www.linkedin.com/in/ayanava-99",
+  "experience": [
+    {
+      "company": "PricewaterhouseCoopers (PwC)",
+      "title": "Associate 2 – Data and Analytics",
+      "location": "Bangalore, KA",
+      "dates": "Sep 2021 – Jun 2023",
+      "bullets": [
+        "Led technical implementation for a 12-person squad to automate data cleaning workflows; reduced processing time and optimized ETL costs via Azure improvements.",
+        "Built a Pandas-based Python package to standardize transformations across diverse formats, improving code reuse and consistency.",
+        "Worked on high-volume ETL pipelines for SAP ECC → S/4HANA migration, processing large daily volumes with zero downtime.",
+        "Engineered PL/SQL procedures to validate data integrity across complex tables and legacy systems, improving accuracy and trust.",
+        "Improved maintainability of a legacy codebase via CI/CD practices and refactoring, boosting developer productivity."
+      ]
+    },
+    {
+      "company": "Highradius",
+      "title": "Data Science Intern",
+      "location": "Bhubaneswar, OD",
+      "dates": "Apr 2020 – Jul 2021",
+      "bullets": [
+        "Developed and deployed Remittance Prediction models into production, improving accuracy and automating manual work.",
+        "Ran monthly performance analysis for remittance prediction and mismatch models to identify bottlenecks and drift.",
+        "Built monitoring and retraining pipelines to sustain model performance over time.",
+        "Led a 4-member team to architect a Dockerized web application, reducing deployment time and operational friction.",
+        "Shipped an intelligent Image Gallery feature that removed most manual review effort across multiple cross-functional teams.",
+        "Built a full-stack B2B cloud application with a Dialogflow chatbot handling high volumes of daily queries."
+      ]
+    }
+  ],
+  "projectsFromResume": [
+    "ML Model Analyser (Python, Streamlit, LLM) — drift detection, health scoring, auto-generated fixes.",
+    "Exam Seating & Attendance Generator (Python, Streamlit, Docker) — clash detection, room allocation, dynamic attendance sheets."
+  ],
+  "skills": [
+    { "name": "Languages", "items": ["Python", "C++", "C"] },
+    { "name": "Frameworks", "items": ["Pandas", "Scikit-learn", "FastAPI", "Streamlit"] },
+    { "name": "Cloud & DevOps", "items": ["Azure (Databricks)", "Docker", "Git"] },
+    { "name": "Databases", "items": ["Oracle PL/SQL"] }
+  ],
+  "certifications": [
+    "Microsoft Certified: Azure AI Engineer Associate (AI-102)",
+    "Microsoft Certified: Azure Data Scientist (DP-100)",
+    "AWS Certified Cloud Practitioner"
+  ],
+  "education": [
+    {
+      "school": "Indian Institute of Technology Patna",
+      "degree": "M.Tech in Artificial Intelligence",
+      "cgpa": "CGPA: 8.09",
+      "location": "Patna, BR",
+      "dates": "2025 – 2027"
+    },
+    {
+      "school": "Kalinga Institute of Industrial Technology",
+      "degree": "B.Tech in Computer Science and Systems Engineering",
+      "cgpa": "CGPA: 7.76",
+      "location": "Bhubaneswar, OD",
+      "dates": "2017 – 2021"
+    }
+  ]
+}

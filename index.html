@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="AyANAVA Dutta — AI / Data Engineering portfolio (IIT Patna M.Tech AI). Experience in Azure, ETL, production ML, and building data products." />
+
+    <title>Ayanava Dutta | AI • Data Engineering</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Ayanava Dutta | AI • Data Engineering" />
+    <meta property="og:description" content="IIT Patna M.Tech AI. Azure + ETL + Production ML. Projects, experience, and contact." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/og.png" />
+
+    <!-- Preconnect for better font performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#" aria-label="Home">
+          <span class="brand-mark" aria-hidden="true">AD</span>
+          <span class="brand-text">Ayanava Dutta</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#education">Education</a>
+          <a href="#contact" class="nav-cta">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="content">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow" id="hero-eyebrow">AI • Data Engineering • ML Systems</p>
+            <h1 class="headline" id="hero-name">Ayanava Dutta</h1>
+            <p class="subhead" id="hero-summary">
+              M.Tech (AI) at IIT Patna. Former PwC Data & Analytics Associate building high-volume ETL and Azure data workflows.
+              I ship production ML and tooling that reduces cycle time, cost, and operational risk.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" id="resume-link" href="assets/Ayanava_Dutta_Resume.pdf" target="_blank" rel="noreferrer">
+                View Resume
+              </a>
+              <a class="btn btn-secondary" href="#projects">See Projects</a>
+            </div>
+
+            <div class="hero-links" aria-label="Profile links">
+              <a id="link-email" href="mailto:ayanava1999@gmail.com">ayanava1999@gmail.com</a>
+              <span class="dot" aria-hidden="true">•</span>
+              <a id="link-github" href="https://github.com/ayanava99" target="_blank" rel="noreferrer">github.com/ayanava99</a>
+              <span class="dot" aria-hidden="true">•</span>
+              <a id="link-linkedin" href="https://www.linkedin.com/in/ayanava-99" target="_blank" rel="noreferrer">linkedin.com/in/ayanava-99</a>
+            </div>
+          </div>
+
+          <aside class="hero-card" aria-label="Highlights">
+            <div class="card">
+              <div class="card-header">
+                <h2 class="card-title">Highlights</h2>
+                <p class="card-subtitle">The fastest way to understand my work.</p>
+              </div>
+              <ul class="bullets" id="highlights">
+                <li>Led a 12-person squad to automate data cleaning workflows; reduced processing time and improved Azure cost efficiency.</li>
+                <li>Built a reusable Python (Pandas) transformation package to standardize data formats and improve code reuse.</li>
+                <li>Shipped production ML: remittance prediction + monitoring/retraining pipelines.</li>
+                <li>Dockerized and delivered web apps; improved deploy speed and reliability.</li>
+              </ul>
+              <div class="card-footer">
+                <div class="pill-row">
+                  <span class="pill">Azure</span>
+                  <span class="pill">Python</span>
+                  <span class="pill">ETL</span>
+                  <span class="pill">ML</span>
+                  <span class="pill">Docker</span>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="experience">
+        <div class="container">
+          <div class="section-header">
+            <h2>Experience</h2>
+            <p>Impact, scope, and systems I’ve shipped.</p>
+          </div>
+
+          <div class="timeline" id="experience-list">
+            <!-- Populated from data/profile.json -->
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <div class="container">
+          <div class="section-header">
+            <h2>Projects</h2>
+            <p>Live work: apps, ML tooling, and engineering systems.</p>
+          </div>
+
+          <div class="projects-toolbar">
+            <div class="toggle">
+              <input id="toggle-github" type="checkbox" />
+              <label for="toggle-github">Auto-load from GitHub (public repos)</label>
+            </div>
+            <div class="input-row">
+              <label class="sr-only" for="github-username">GitHub username</label>
+              <input id="github-username" type="text" inputmode="text" spellcheck="false" placeholder="GitHub username (e.g., ayanava99)" />
+              <button class="btn btn-tertiary" id="reload-projects" type="button">Reload</button>
+            </div>
+          </div>
+
+          <div class="grid" id="projects-grid" aria-live="polite"></div>
+
+          <p class="note">
+            Want to add projects later? Edit <code>data/projects.json</code> (manual), or keep the GitHub toggle on and pin repos on your GitHub profile.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="skills">
+        <div class="container">
+          <div class="section-header">
+            <h2>Skills</h2>
+            <p>Tools I’m productive in; comfortable owning systems end-to-end.</p>
+          </div>
+          <div class="skill-grid" id="skills-grid">
+            <!-- Populated from data/profile.json -->
+          </div>
+          <div class="certs" id="certifications">
+            <!-- Populated from data/profile.json -->
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="education">
+        <div class="container">
+          <div class="section-header">
+            <h2>Education</h2>
+            <p>Academic foundation.</p>
+          </div>
+          <div class="education-grid" id="education-grid">
+            <!-- Populated from data/profile.json -->
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="container">
+          <div class="section-header">
+            <h2>Contact</h2>
+            <p>Recruiters: fastest response via email.</p>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-left">
+              <h3>Let’s talk</h3>
+              <p>
+                I’m open to roles in AI/ML engineering, data engineering, and ML platform/tooling. If you’re hiring, I’d love to share
+                a concise walkthrough of impact, systems, and architecture decisions.
+              </p>
+            </div>
+            <div class="contact-right">
+              <a class="btn btn-primary" id="contact-email" href="mailto:ayanava1999@gmail.com">Email me</a>
+              <a class="btn btn-secondary" id="contact-linkedin" href="https://www.linkedin.com/in/ayanava-99" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a class="btn btn-tertiary" id="contact-github" href="https://github.com/ayanava99" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Ayanava Dutta. Built for clarity, speed, and recruiter scanability.</p>
+        <a class="back-to-top" href="#">Back to top</a>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
