@@ -261,30 +261,6 @@ code{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Libera
 .role ul{margin: 10px 0 0; padding-left: 18px; color: rgba(255,255,255,.78)}
 .role li{margin: 8px 0}
 
-.projects-toolbar{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap: 12px;
-  flex-wrap:wrap;
-  margin: 12px 0 18px;
-}
-.toggle{display:flex; align-items:center; gap: 10px; color: rgba(255,255,255,.74); font-size: 14px}
-.toggle input{width: 18px; height: 18px}
-.input-row{display:flex; gap: 10px; align-items:center; flex-wrap:wrap}
-input[type="text"]{
-  height: 44px;
-  padding: 0 12px;
-  min-width: 260px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.05);
-  color: rgba(255,255,255,.92);
-  outline: none;
-}
-input[type="text"]::placeholder{color: rgba(255,255,255,.48)}
-input[type="text"]:focus{border-color: rgba(124,92,255,.55); box-shadow: 0 0 0 4px rgba(124,92,255,.16)}
-
 .grid{display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px}
 .project{
   border-radius: var(--radius);
@@ -294,6 +270,20 @@ input[type="text"]:focus{border-color: rgba(124,92,255,.55); box-shadow: 0 0 0 4
   display:flex;
   flex-direction:column;
   gap: 10px;
+}
+.project-link{
+  text-decoration: none;
+  color: inherit;
+  transition: transform .10s ease, background .16s ease, border-color .16s ease;
+}
+.project-link:hover{
+  background: rgba(255,255,255,.06);
+  border-color: rgba(124,92,255,.22);
+  transform: translateY(-1px);
+}
+.project-link:focus{
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(124,92,255,.16);
 }
 .project h3{margin:0; font-size: 16px; letter-spacing: -0.02em}
 .project p{margin:0; color: rgba(255,255,255,.70); font-size: 14px}
@@ -394,8 +384,6 @@ input[type="text"]:focus{border-color: rgba(124,92,255,.55); box-shadow: 0 0 0 4
 @media (max-width: 640px){
   .nav{gap: 6px}
   .nav a{padding: 8px 8px}
-  input[type="text"]{min-width: 0; width: 100%}
-  .input-row{width:100%}
   .grid{grid-template-columns: 1fr;}
   .skill-grid{grid-template-columns: 1fr;}
   .education-grid{grid-template-columns: 1fr;}

@@ -136,22 +136,10 @@
             <p>Live work: apps, ML tooling, and engineering systems.</p>
           </div>
 
-          <div class="projects-toolbar">
-            <div class="toggle">
-              <input id="toggle-github" type="checkbox" />
-              <label for="toggle-github">Auto-load from GitHub (public repos)</label>
-            </div>
-            <div class="input-row">
-              <label class="sr-only" for="github-username">GitHub username</label>
-              <input id="github-username" type="text" inputmode="text" spellcheck="false" placeholder="GitHub username (e.g., ayanava99)" />
-              <button class="btn btn-tertiary" id="reload-projects" type="button">Reload</button>
-            </div>
-          </div>
-
           <div class="grid" id="projects-grid" aria-live="polite"></div>
 
           <p class="note">
-            Want to add projects later? Edit <code>data/projects.json</code> (manual), or keep the GitHub toggle on and pin repos on your GitHub profile.
+            Want to add projects later? Edit <code>data/projects.json</code>. Each project card opens its GitHub repository.
           </p>
         </div>
       </section>

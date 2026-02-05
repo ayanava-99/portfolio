@@ -109,19 +109,23 @@ function projectCard(p) {
   const liveUrl = normalizeUrl(p.liveUrl);
   const repoUrl = normalizeUrl(p.repoUrl);
   const links = [
-    liveUrl ? `<a href="${escapeHtml(liveUrl)}" target="_blank" rel="noreferrer">Live</a>` : "",
-    repoUrl ? `<a href="${escapeHtml(repoUrl)}" target="_blank" rel="noreferrer">Code</a>` : "",
-  ]
-    .filter(Boolean)
-    .join("");
+    liveUrl ? `<a href="${escapeHtml(liveUrl)}" target="_blank" rel="noreferrer" onclick="event.stopPropagation()">Live</a>` : "",
+  ].filter(Boolean).join("");
+
+  // Make the whole card clickable (prefer repo, else live).
+  const primary = repoUrl || liveUrl;
+  const wrapperStart = primary
+    ? `<a class="project project-link" href="${escapeHtml(primary)}" target="_blank" rel="noreferrer" aria-label="${escapeHtml(p.name)}">`
+    : `<article class="project">`;
+  const wrapperEnd = primary ? `</a>` : `</article>`;
 
   return `
-    <article class="project">
+    ${wrapperStart}
       <h3>${escapeHtml(p.name)}</h3>
       <p>${escapeHtml(p.description || "")}</p>
       <div class="meta">${tags}</div>
       <div class="links">${links}</div>
-    </article>
+    ${wrapperEnd}
   `;
 }
 
@@ -139,49 +143,6 @@ function renderProjects(projects) {
 async function loadProjectsManual() {
   const data = await readJson("data/projects.json");
   renderProjects(data.projects || []);
-}
-
-function normalizeGithubRepo(repo) {
-  const topics = Array.isArray(repo.topics) ? repo.topics.slice(0, 6) : [];
-  const lang = repo.language ? [repo.language] : [];
-  const tags = [...lang, ...topics].filter(Boolean);
-
-  return {
-    name: repo.name,
-    description: repo.description || "Repository on GitHub.",
-    tags,
-    liveUrl: repo.homepage || "",
-    repoUrl: repo.html_url,
-    stars: repo.stargazers_count || 0,
-    pushedAt: repo.pushed_at || "",
-    pinnedHint: false,
-  };
-}
-
-async function fetchGithubRepos(username) {
-  // Note: GitHub unauthenticated API has rate limits, but fine for a portfolio.
-  const url = `https://api.github.com/users/${encodeURIComponent(username)}/repos?per_page=100&sort=pushed`;
-  const res = await fetch(url, {
-    headers: {
-      Accept: "application/vnd.github+json",
-    },
-  });
-  if (!res.ok) throw new Error(`GitHub API error: ${res.status}`);
-  return res.json();
-}
-
-async function loadProjectsFromGithub(username) {
-  const root = $("#projects-grid");
-  if (root) root.innerHTML = `<div class="project"><h3>Loading…</h3><p>Fetching public repositories from GitHub.</p></div>`;
-
-  const repos = await fetchGithubRepos(username);
-  const filtered = repos
-    .filter((r) => !r.fork)
-    .map(normalizeGithubRepo)
-    .sort((a, b) => (b.stars - a.stars) || (b.pushedAt.localeCompare(a.pushedAt)));
-
-  // Limit to reduce noise; recommend pinning on GitHub for curation.
-  renderProjects(filtered.slice(0, 9));
 }
 
 async function init() {
@@ -212,32 +173,8 @@ async function init() {
   renderSkills(profile.skills || []);
   renderCerts(profile.certifications || []);
 
-  // Projects
-  const toggle = $("#toggle-github");
-  const usernameInput = $("#github-username");
-  const reloadBtn = $("#reload-projects");
-
-  usernameInput.value = profile.githubUsername || "ayanava99";
-
-  async function refreshProjects() {
-    const useGithub = Boolean(toggle.checked);
-    const username = (usernameInput.value || "").trim();
-    if (useGithub && username) {
-      try {
-        await loadProjectsFromGithub(username);
-      } catch (e) {
-        console.warn(e);
-        await loadProjectsManual();
-      }
-    } else {
-      await loadProjectsManual();
-    }
-  }
-
-  toggle.addEventListener("change", refreshProjects);
-  reloadBtn.addEventListener("click", refreshProjects);
-
-  await refreshProjects();
+  // Projects (single source of truth: data/projects.json)
+  await loadProjectsManual();
 }
 
 init().catch((e) => {

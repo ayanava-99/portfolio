@@ -7,8 +7,6 @@ This is a fast, professional portfolio site built with plain HTML/CSS/JS so it c
 - Profile / experience / education / skills: `data/profile.json`
 - Projects (manual): `data/projects.json`
 
-You can also auto-load projects from GitHub using the toggle on the Projects section.
-
 ## Run locally
 
 Option A (VS Code / Cursor):
@@ -33,5 +31,4 @@ Then open `http://localhost:5173/`.
 ## Add projects later (easy mode)
 
 - Add a new object in `data/projects.json` with `name`, `description`, `tags`, and optional `liveUrl` / `repoUrl`.
-- Or pin repositories on GitHub and enable the GitHub toggle on the site.
 
